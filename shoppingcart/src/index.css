@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out both;
+}
+
+@layer utilities {
+  .animate-shake {
+    animation: shake 0.4s ease-in-out;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    75% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+@keyframes truckFloat {
+  0%, 100% { transform: translateY(0) translateX(-50%); }
+  50% { transform: translateY(-10px) translateX(-50%); }
+}
+
+@keyframes beamFlicker {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes rise {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceFast {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spinSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-truck-float {
+  animation: truckFloat 2s ease-in-out infinite;
+}
+
+.animate-beam-flicker {
+  animation: beamFlicker 1s ease-in-out infinite;
+}
+
+.animate-rise {
+  animation: rise 1s ease forwards;
+}
+
+.animate-bounce-fast {
+  animation: bounceFast 1s ease-in-out infinite;
+}
+
+.animate-fadein {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 3s linear infinite;
+}
+
+@keyframes truck-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-truck-float {
+  animation: truck-float 3s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+@keyframes trail {
+  0%, 100% { opacity: 0.7; transform: translateX(0); }
+  50% { opacity: 0.1; transform: translateX(-6px); }
+}
+.animate-trail {
+  animation: trail 1.5s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+@keyframes glowTrail {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+    box-shadow: 0 0 5px #22d3ee;
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(0.6);
+    box-shadow: 0 0 1px #22d3ee;
+  }
+}
+.animate-glow-trail {
+  animation: glowTrail 1.4s ease-in-out infinite;
+}
+
+
+
+/* Fade in + Slide up animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-container-animation {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+
+
+
+
+
+
+
