@@ -17,9 +17,12 @@ const UserProfile = () => {
         <div className="flex justify-between items-center gap-2 px-3 py-1 bg-white/70 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
           <div className="flex gap-2 items-center">
             <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-sm text-white ">
-              <FaUser className=" text-lg" />
+              <FaUser />
             </div>
-            <h4 className="text-base font-semibold text-gray-800 capitalize ">
+            <h4
+              className="text-sm sm:text-md
+             font-semibold text-gray-800 capitalize "
+            >
               {userName}
             </h4>
           </div>

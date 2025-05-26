@@ -48,7 +48,7 @@ const CartModal = () => {
         className="fixed inset-0 bg-black/85 w-screen h-screen flex justify-center items-center z-50 backdrop  backdrop-blur-sm "
         onClick={transformModal}
       >
-        <div className="relative w-[90%] max-w-xl bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200 p-8 animate-fade-in-up overflow-x-hidden modal-box transition-transform duration-300">
+        <div className="relative w-full h-full sm:h-fit sm:w-[90%] sm:max-w-xl bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200 py-8 sm:p-8 animate-fade-in-up overflow-x-hidden modal-box transition-transform duration-300">
           <button
             onClick={closeCart}
             className="absolute top-4 right-4 text-black text-lg cursor-pointer hover:bg-white p-1.5 rounded  transition-all duration-300 ease-in-out"
@@ -66,7 +66,7 @@ const CartModal = () => {
             </p>
           ) : (
             <>
-              <div className="space-y-4 max-h-[350px] overflow-y-auto p-3">
+              <div className="space-y-4 sm:max-h-[350px] overflow-y-auto p-3">
                 {cartProduct.map((productItem, index) => (
                   <CartProduct
                     productData={productItem}
@@ -77,14 +77,14 @@ const CartModal = () => {
                 ))}
               </div>
 
-              <div className="mt-4 flex items-center justify-between bg-white p-4 rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300">
+              <div className="mt-4 mx-3 sm:mx-0 flex items-center justify-between bg-white p-4 rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300">
                 <div className="flex items-center gap-3">
                   <i className="fas fa-shopping-cart text-indigo-600 text-xl"></i>
-                  <span className="text-lg font-semibold uppercase text-gray-700 tracking-wide">
+                  <span className="sm:text-lg font-semibold uppercase text-gray-700 tracking-wide">
                     Cart Total
                   </span>
                 </div>
-                <p className="text-2xl font-bold text-green-600">
+                <p className="text-xl sm:text-2xl font-bold text-green-600 ">
                   {cartTotal.toLocaleString()}
                 </p>
               </div>

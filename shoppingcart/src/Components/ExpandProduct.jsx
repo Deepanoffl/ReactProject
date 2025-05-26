@@ -94,19 +94,19 @@ const ExpandProduct = () => {
         className="fixed inset-0 z-50 bg-black/80 backdrop backdrop-blur-md flex items-center justify-center px-4"
         onClick={transformModal}
       >
-        <div className="modal-box relative w-full max-w-5xl h-auto md:h-[400px]  text-white rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row animate-fade-in-up transition-transform duration-300">
+        <div className="modal-box relative w-full max-w-5xl h-auto sm:h-[400px]  text-white rounded-2xl overflow-hidden shadow-2xl flex flex-col sm:flex-row animate-fade-in-up transition-transform duration-300">
           <button
             className="absolute top-4 right-6 p-1.5 hover:bg-gray-300 transition-all duration-300 ease-in-out rounded text-lg md:text-white text-gray-400 hover:text-black cursor-pointer"
             onClick={closeExpand}
           >
             <FaTimes />
           </button>
-          <div className="w-full md:w-1/2 h-64 md:h-full bg-white flex items-center justify-center p-4">
+          <div className="w-full sm:w-1/2 h-64 sm:h-full bg-white flex items-center justify-center p-4">
             {/* rendering img component */}
             <Image className={imgStyle} src={expandData.Img} alt="product" />
           </div>
-          <div className="flex flex-col justify-start p-6 md:p-8 md:w-1/2 overflow-auto max-h-[400px] space-y-4 bg-gray-900">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-pink-400 break-words">
+          <div className="flex flex-col justify-start p-6 sm:p-8 sm:w-1/2 overflow-auto max-h-[400px] space-y-4 bg-gray-900">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-pink-400 break-words">
               {expandData.Title}
             </h2>
             <p className="text-base md:text-lg leading-relaxed text-gray-200 break-words">
@@ -124,7 +124,7 @@ const ExpandProduct = () => {
                     icon={faBolt}
                     className="text-white rounded-full p-1"
                   />
-                  Buy Now
+                  Buy 
                 </>
               )}
             </button>

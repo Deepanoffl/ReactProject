@@ -45,7 +45,7 @@ const Products = ({ product }) => {
 
   //style for button component
   const btnStyle =
-    " px-6 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold shadow-md hover:from-blue-600 hover:to-purple-600 transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 cursor-pointer text-sm sm:text-lg w-full";
+    " px-6 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold shadow-md hover:from-blue-600 hover:to-purple-600 transition-all duration-300 ease-in-out transform hover:scale-105  cursor-pointer text-sm sm:text-lg w-full";
 
   //style for img component
   const imgStyle = "w-32 h-32 object-contain mb-4 cursor-pointer ";
@@ -166,37 +166,35 @@ const Products = ({ product }) => {
     <>
       <div
         data-category={product.category}
-        className="relative bg-white rounded-lg shadow-md p-4 flex flex-col items-center hover:shadow-xl transition duration-300"
+        className="relative bg-white/30 backdrop-blur-md border border-white/40 shadow-lg rounded-2xl p-5 flex flex-col items-center hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group"
       >
-        <div>
-          {/*rendering image component */}
+        <div className="relative overflow-hidden rounded-xl w-full flex justify-center items-center mb-4">
+          {/* Product Image */}
           <Image
             src={product.image}
             alt={product.title}
-            className={imgStyle}
+            className={`${imgStyle} object-contain transition-transform duration-500 ease-in-out group-hover:scale-105 cursor-pointer`}
             onClick={openExpand}
           />
         </div>
-        <h3 className="text-sm sm:text-lg font-semibold text-center mb-2">
+        <h3 className="text-center text-base sm:text-lg font-bold text-gray-800 group-hover:text-pink-600 transition-all duration-300">
           {product.title.slice(0, 20)}
         </h3>
-        <p className="text-green-600 font-bold text-center text-sm sm:text-base mb-3">
-          {inrAmount.toLocaleString()}
+        <p className="text-center text-green-600 font-extrabold text-sm sm:text-lg mb-4">
+          ₹{inrAmount.toLocaleString()}
         </p>
-        <div className=" w-3/5">
-          {/* rendering btn component */}
+        <div className="w-4/5 sm:w-full mb-3">
           <Button
             btnText={cartAdd}
-            className={btnStyle}
+            className={`transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg ${btnStyle}`}
             iconOrText={icon}
             onClick={addProductDetails}
           />
         </div>
-        <div className="absolute right-5 top-3 w-9 h-9 border border-gray-300 shadow-sm bg-white rounded-full  flex items-center justify-center">
-          {" "}
+        <div className="absolute top-3 right-3 w-10 h-10 bg-white/80 shadow-lg rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300">
           <span
             className={`sm:text-xl  cursor-pointer transition-all duration-300 ease-out text-gray-300 ${
-              liked ? "text-red-500" : "text-gray-300"
+              liked ? "text-red-500" : "text-gray-500"
             } ${clicked ? "scale-125" : "scale-100"}`}
             onClick={heartToggle}
           >

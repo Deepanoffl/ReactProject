@@ -18,7 +18,7 @@ const Favorites = () => {
   return (
     <div className="max-w-6xl mx-auto bg-white py-5 px-4 product-container-animation">
       <div className="flex items-center justify-between mb-10 px-2">
-        <h2 className="text-2xl font-extrabold text-gray-900 tracking-wide">
+        <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900 tracking-wide">
           Favorites
         </h2>
         <button

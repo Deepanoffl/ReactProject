@@ -177,8 +177,8 @@ const CartProduct = ({ productData, setTrackQuantity, setMsg }) => {
   }, [productData.Id]);
 
   return (
-    <div className="flex items-center justify-between max-[500px]:flex-col gap-4 bg-white shadow-sm rounded-xl p-3 pb-4">
-      <div className="flex max-[500px]:flex-col items-center gap-2 flex-1">
+    <div className="flex items-center justify-between  gap-4 bg-white shadow-sm rounded-xl p-3 pb-4">
+      <div className="flex  items-center gap-2 flex-1">
         {/* rendering img component */}
         <Image
           src={productData.Img}
@@ -187,7 +187,7 @@ const CartProduct = ({ productData, setTrackQuantity, setMsg }) => {
         />
 
         <div className="w-full">
-          <p className="text-gray-700 font-medium truncate max-[500px]:text-center">
+          <p className="text-gray-700  font-medium truncate max-[500px]:text-center">
             {productData.Title}
           </p>
 
@@ -227,7 +227,7 @@ const CartProduct = ({ productData, setTrackQuantity, setMsg }) => {
               ) : (
                 <>
                   <FontAwesomeIcon icon={faBolt} className="rounded-full" />
-                  Buy Now
+                  Buy
                 </>
               )}
             </button>

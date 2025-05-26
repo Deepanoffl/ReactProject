@@ -120,11 +120,11 @@ const ForgetPassword = () => {
         className={`bg-white/90 backdrop-blur-md border border-gray-200 rounded-2xl shadow-2xl p-10 max-w-md w-full transition-all duration-300 product-container-animation
         `}
       >
-        <h1 className="text-4xl font-bold text-[#FCA201] mb-4 text-center">
+        <h1 className="text-2xl sm:text-4xl font-bold text-[#FCA201] mb-4 text-center">
           Change Password
         </h1>
         <p
-          className={`text-center text-gray-700 mb-6 ${
+          className={` text-center text-gray-700 mb-6 ${
             shake ? "animate-shake text-red-500" : ""
           } `}
         >

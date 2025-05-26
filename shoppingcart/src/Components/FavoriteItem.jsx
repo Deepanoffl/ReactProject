@@ -31,7 +31,7 @@ const FavoriteItem = ({ productDetails }) => {
       <img
         src={productDetails.Img}
         alt={productDetails.Title}
-        className="w-full h-40 object-contain rounded-2xl mb-4"
+        className="w-full h-30 sm:h-40 object-contain rounded-2xl mb-4"
         onClick={purchase}
       />
     </div>

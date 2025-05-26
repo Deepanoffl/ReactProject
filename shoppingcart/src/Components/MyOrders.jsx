@@ -30,7 +30,7 @@ const MyOrders = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 product-container-animation">
       <div className="flex justify-between items-center mb-10">
-        <h2 className="text-2xl font-extrabold text-gray-900 tracking-wide">
+        <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900 tracking-wide">
           My Orders
         </h2>
         <button

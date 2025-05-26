@@ -87,7 +87,7 @@ const Login = () => {
       <div
         className={`bg-white/90 backdrop-blur-md border border-gray-200 rounded-2xl shadow-2xl p-10 max-w-md w-full transition-all duration-500 product-container-animation`}
       >
-        <h1 className="text-4xl font-bold text-[#5D3FD3] mb-4 text-center">
+        <h1 className="text-2xl sm:text-4xl font-bold text-[#5D3FD3] mb-4 text-center">
           Welcome Back
         </h1>
         <p

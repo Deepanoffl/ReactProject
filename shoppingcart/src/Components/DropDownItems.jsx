@@ -39,7 +39,7 @@ const DropDownItems = ({ title, icon: Icon, dropDownType }) => {
       ) : (
         <div className="flex items-center gap-2 w-full">
           <Icon />
-          <span>{title}</span>
+          <span className="text-sm sm:text-md font-semibold text-gray-800 capitalize">{title}</span>
         </div>
       )}
     </li>

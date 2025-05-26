@@ -39,9 +39,9 @@ const Header = () => {
   };
 
   return (
-    <header className="shadow-md flex justify-between items-center px-6 sticky top-0 z-10 backdrop-blur-md bg-white/70">
+    <header className="shadow-md flex justify-between items-center px-6  sticky top-0 z-10 backdrop-blur-md bg-white/70">
       <div className="logo">
-        <img src={img} alt="Logo" width={125} className="cursor-pointer" />
+        <img src={img} alt="Logo"  className="cursor-pointer sm:w-30 w-25"  />
       </div>
 
       <button
@@ -49,13 +49,13 @@ const Header = () => {
         border-black ${mobileMenu ? "border-3" : ""}`}
         onClick={() => setMobileMenu(!mobileMenu)}
       >
-        <FaBars />
+        <FaBars className="text-md"/>
       </button>
 
       <div
         className={`
         md:p-0 md:static md:flex md:items-center md:gap-4
-        absolute  top-full left-0 right-0 p-4 z-50  bg-black/75 backdrop backdrop-blur-md 
+        absolute  top-full left-0 right-0 p-4 z-50  bg-purple-500 backdrop backdrop-blur-md 
         md:bg-transparent 
         transition-all duration-300 ease-in-out transform 
         ${
@@ -70,7 +70,7 @@ const Header = () => {
           <input
             type="text"
             placeholder="🔍 Search Products"
-            className="w-full px-4 py-2 text-sm rounded-xl border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ease-in-out bg-white placeholder-gray-400"
+            className="w-full px-4 py-2 text-sm rounded-xl border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ease-in-out bg-white placeholder-gray-400 "
             value={search}
             onChange={handleInput}
           />
