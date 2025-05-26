@@ -21,6 +21,7 @@ const ManageProductData = (components) => {
 
   //storing data from the API
   const [renderedData, setRenderedData] = useState([]);
+  
 
   //again storing the same data from API to filter products when using searchbar
   const [originalData, setOriginalData] = useState([]);

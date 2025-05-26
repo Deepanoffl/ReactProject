@@ -3,6 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import Image from "./Image";
 import Button from "./Button";
 import { FaHeart } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 
 const Products = ({ product }) => {
   //getting usestate data from central storage
@@ -169,7 +170,6 @@ const Products = ({ product }) => {
         className="relative bg-white/30 backdrop-blur-md border border-white/40 shadow-lg rounded-2xl p-5 flex flex-col items-center hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group"
       >
         <div className="relative overflow-hidden rounded-xl w-full flex justify-center items-center mb-4">
-          {/* Product Image */}
           <Image
             src={product.image}
             alt={product.title}
@@ -194,11 +194,17 @@ const Products = ({ product }) => {
         <div className="absolute top-3 right-3 w-10 h-10 bg-white/80 shadow-lg rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300">
           <span
             className={`sm:text-xl  cursor-pointer transition-all duration-300 ease-out text-gray-300 ${
-              liked ? "text-red-500" : "text-gray-500"
+              liked ? "text-red-500" : "text-gray-400"
             } ${clicked ? "scale-125" : "scale-100"}`}
             onClick={heartToggle}
           >
             <FaHeart />
+          </span>
+        </div>
+        <div className="absolute top-6 left-3 px-2 py-1 bg-green-600 text-white text-xs font-semibold rounded-md flex items-center gap-1 shadow-md">
+          <span className="flex items-center">
+            {product.rating.rate}
+            <FaStar className="ml-1  text-[0.75rem]" />
           </span>
         </div>
       </div>
