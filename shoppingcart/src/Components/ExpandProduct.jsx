@@ -106,10 +106,10 @@ const ExpandProduct = () => {
             <Image className={imgStyle} src={expandData.Img} alt="product" />
           </div>
           <div className="flex flex-col justify-start p-6 sm:p-8 sm:w-1/2 overflow-auto max-h-[400px] space-y-4 bg-gray-900">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-pink-400 break-words">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-pink-400 break-words">
               {expandData.Title}
             </h2>
-            <p className="text-base md:text-lg leading-relaxed text-gray-200 break-words">
+            <p className="text-base sm:text-lg leading-relaxed text-gray-200 break-words">
               {expandData.Description}
             </p>
             <button

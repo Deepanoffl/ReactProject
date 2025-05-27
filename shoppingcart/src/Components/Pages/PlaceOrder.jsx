@@ -63,11 +63,11 @@ const PlaceOrder = () => {
             </div>
           </div>
           <div className="bg-black/60 backdrop-blur-md p-3 rounded-xl shadow-lg text-white animate-rise">
-            <h2 className="text-2xl font-bold mt-4 text-center ">
+            <h2 className="text-lg sm:text-2xl font-bold mt-4 text-center ">
               Order Placed ! ✨
             </h2>
             <button
-              className="mt-5 px-6 py-3 bg-sky-600 hover:bg-sky-700 transition duration-300 text-white rounded-lg shadow-lg tracking-wide cursor-pointer"
+              className="mt-5 px-3 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-md bg-sky-600 hover:bg-sky-700 transition duration-300 text-white rounded-lg shadow-lg tracking-wide cursor-pointer"
               onClick={trackOrder}
             >
               <div className="flex items-center gap-3">

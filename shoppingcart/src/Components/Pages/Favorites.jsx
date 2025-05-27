@@ -22,7 +22,7 @@ const Favorites = () => {
           Favorites
         </h2>
         <button
-          className="flex items-center text-lg gap-2 text-blue-600 hover:text-blue-800 font-semibold transition duration-300 ease-in-out cursor-pointer"
+          className="flex items-center sm:text-lg gap-2 text-blue-600 hover:text-blue-800 font-semibold transition duration-300 ease-in-out cursor-pointer"
           onClick={goHome}
         >
           <Home className="w-5 h-5" />
@@ -43,7 +43,7 @@ const Favorites = () => {
           ))
         ) : (
           <div className="text-center">
-            <p className="text-xl font-semibold text-gray-500 tracking-wide">
+            <p className="sm:text-xl font-semibold text-gray-500 tracking-wide">
               Oops! No Favorites.
             </p>
           </div>

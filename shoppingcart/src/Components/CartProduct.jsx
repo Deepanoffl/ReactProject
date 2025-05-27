@@ -200,7 +200,7 @@ const CartProduct = ({ productData, setTrackQuantity, setMsg }) => {
                 –
               </button>
 
-              <span className="w-8 text-center text-gray-800">
+              <span className="w-8 text-center text-sm text-gray-800">
                 {loadQuantity}
               </span>
 

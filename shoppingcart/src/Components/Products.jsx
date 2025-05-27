@@ -181,7 +181,7 @@ const Products = ({ product }) => {
           {product.title.slice(0, 20)}
         </h3>
         <p className="text-center text-green-600 font-extrabold text-sm sm:text-lg mb-4">
-          ₹{inrAmount.toLocaleString()}
+          {inrAmount.toLocaleString()}
         </p>
         <div className="w-4/5 sm:w-full mb-3">
           <Button

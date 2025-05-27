@@ -96,10 +96,10 @@ const BuyNow = () => {
           />
         </div>
         <div className="md:w-1/2 p-4 flex flex-col justify-center ">
-          <h2 className="text-3xl font-bold text-[#ee1665] mb-2">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#ee1665] mb-2">
             {purchaseData.Title}
           </h2>
-          <p className="text-gray-600 mb-4 text-lg leading-relaxed">
+          <p className="text-gray-600 mb-4 sm:text-lg leading-relaxed">
             {purchaseData.Description?.slice(0, 150)}
             <span className="font-bold text-gray-400 italic ml-1 cursor-pointer hover:text-[#ee1665]">
               ...etc
@@ -107,10 +107,10 @@ const BuyNow = () => {
           </p>
           <div></div>
           <div className="mb-4">
-            <p className="text-xl text-gray-500 line-through">
+            <p className="sm:text-lg text-gray-500 line-through">
               Original Price : {purchaseData?.Price?.toLocaleString?.()}
             </p>
-            <p className="text-2xl font-bold text-green-600">
+            <p className="text-xl sm:text-2xl font-bold text-green-600">
               Offer Price : {discountPrice.toLocaleString?.()} (
               {discountPercentage}% OFF)
             </p>
@@ -122,14 +122,14 @@ const BuyNow = () => {
           </ul>
           <div className="flex flex-wrap items-center gap-4">
             <button
-              className="bg-[#ee1665] hover:bg-[#d21458] text-white text-lg px-6 py-3 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
+              className="bg-[#ee1665] hover:bg-[#d21458] text-white sm:text-lg px-6 py-3 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
               onClick={placeOrder}
             >
-              <FaShoppingCart className="text-2xl text-white" /> Place Order
+              <FaShoppingCart className="sm:text-2xl text-white" /> Place Order
             </button>
             <button
               onClick={goBack}
-              className="text-[#ee1665] border border-[#ee1665] hover:bg-[#ee1665] hover:text-white text-lg px-6 py-3 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
+              className="text-[#ee1665] border border-[#ee1665] hover:bg-[#ee1665] hover:text-white sm:text-lg px-6 py-3 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
             >
               ← Back
             </button>
