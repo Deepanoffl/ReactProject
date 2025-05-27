@@ -48,20 +48,20 @@ const CartModal = () => {
         className="fixed inset-0 bg-black/85 w-screen h-screen flex justify-center items-center z-50 backdrop  backdrop-blur-sm "
         onClick={transformModal}
       >
-        <div className="relative w-full h-full sm:h-fit sm:w-[90%] sm:max-w-xl bg-white/80 backdrop-blur-lg sm:rounded-2xl shadow-2xl border border-gray-200 py-8 sm:p-8 animate-fade-in-up overflow-x-hidden modal-box transition-transform duration-300">
+        <div className="relative w-full h-full sm:h-fit sm:w-[90%] sm:max-w-xl bg-gradient-to-r from-blue-500 backdrop-blur-lg sm:rounded-2xl shadow-2xl  py-8 sm:p-8 animate-fade-in-up overflow-x-hidden modal-box transition-transform duration-300">
           <button
             onClick={closeCart}
-            className="absolute top-4 right-4 text-black text-lg cursor-pointer hover:bg-white p-1.5 rounded  transition-all duration-300 ease-in-out"
+            className="absolute top-4 right-4 text-white text-lg cursor-pointer hover:bg-white hover:text-black p-1.5 rounded  transition-all duration-300 ease-in-out"
           >
             <FaTimes />
           </button>
 
-          <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6 border-b pb-2">
+          <h2 className="text-2xl font-semibold text-center text-white  mb-3 border-b pb-3 ">
             Your Cart
           </h2>
 
           {cartProduct.length === 0 ? (
-            <p className="text-gray-500 text-center">
+            <p className="text-white flex justify-center items-center min-h-[80vh] sm:min-h-[0vh] ">
               Oops ! Your cart is empty{" "}
             </p>
           ) : (

@@ -55,7 +55,7 @@ const Header = () => {
       <div
         className={`
         md:p-0 md:static md:flex md:items-center md:gap-4
-        absolute  top-full left-0 right-0 p-4 z-50  bg-purple-500 backdrop backdrop-blur-md 
+        absolute  top-full left-0 right-0 p-4 z-50  bg-purple-300 backdrop backdrop-blur-md 
         md:bg-transparent 
         transition-all duration-300 ease-in-out transform 
         ${
