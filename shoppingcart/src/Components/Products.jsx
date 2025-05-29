@@ -2,6 +2,7 @@ import { ProductContext } from "./ManageProductData";
 import { useState, useContext, useEffect } from "react";
 import Image from "./Image";
 import Button from "./Button";
+import { updateLocalStg } from "./HelperFn/updateLocalStorage";
 import { FaHeart } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 
@@ -69,7 +70,7 @@ const Products = ({ product }) => {
 
     if (storeLike) {
       setLiked(storeLike);
-      localStorage.setItem(loadLike, JSON.stringify(storeLike));
+      updateLocalStg(loadLike, storeLike);
 
       const favoriteDetails = [
         ...favorites,
@@ -83,17 +84,17 @@ const Products = ({ product }) => {
       ];
 
       setFavorites(favoriteDetails);
-      localStorage.setItem("favorites", JSON.stringify(favoriteDetails));
+      updateLocalStg("favorites", favoriteDetails);
     } else {
       setLiked(storeLike);
-      localStorage.removeItem(loadLike);
+      updateLocalStg(loadLike, null, false);
 
       const removeFavorites = favorites.filter(
         (favoriteItem) => favoriteItem.Id != product.id
       );
 
       setFavorites(removeFavorites);
-      localStorage.setItem("favorites", JSON.stringify(removeFavorites));
+      updateLocalStg("favorites", removeFavorites);
     }
   };
 
@@ -107,7 +108,7 @@ const Products = ({ product }) => {
     };
 
     setExpandData(productExpandData);
-    localStorage.setItem("expandData", JSON.stringify(productExpandData));
+    updateLocalStg("expandData", productExpandData);
 
     setExpand(true);
     localStorage.setItem("expand", "open");
@@ -118,7 +119,7 @@ const Products = ({ product }) => {
       const countProduct = count + 1;
 
       setCount(countProduct);
-      localStorage.setItem("cartCount", countProduct);
+      updateLocalStg("cartCount", countProduct);
 
       const productDetails = {
         Id: product.id,
@@ -131,12 +132,12 @@ const Products = ({ product }) => {
       const storingCartDetails = [...cartProduct, productDetails];
 
       setCartProduct(storingCartDetails);
-      localStorage.setItem("cartProduct", JSON.stringify(storingCartDetails));
+      updateLocalStg("cartProduct", storingCartDetails);
 
       const addProductId = [...addedProductIds, product.id];
 
       setAddedProductIds(addProductId);
-      localStorage.setItem("productId", JSON.stringify(addProductId));
+      updateLocalStg("productId", addProductId);
 
       const updatedTotal = [
         ...total,
@@ -148,7 +149,7 @@ const Products = ({ product }) => {
       ];
 
       setTotal(updatedTotal);
-      localStorage.setItem("cartTotal", JSON.stringify(updatedTotal));
+      updateLocalStg("cartTotal", updatedTotal);
     } else {
       setIsCartOpen(true);
       localStorage.setItem("cartModal", "open");

@@ -4,9 +4,10 @@ import { useContext, useState, useEffect } from "react";
 import Image from "./Image";
 import Button from "./Button";
 import Spinner from "./Spinner";
+import { updateLocalStg } from "./HelperFn/updateLocalStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBolt } from "@fortawesome/free-solid-svg-icons";
-import { jsx } from "react/jsx-runtime";
+import { faBolt, faL } from "@fortawesome/free-solid-svg-icons";
+
 
 const CartProduct = ({ productData, setTrackQuantity, setMsg }) => {
   //for page routing
@@ -38,8 +39,8 @@ const CartProduct = ({ productData, setTrackQuantity, setMsg }) => {
   const [loading, setLoading] = useState(false);
 
   //creating key to storing cart product quantity in local storage
-  const setKey1 = `cart_productQuantity-${productData.Id}`;
-  const setKey2 = `cart_productRate-${productData.Id}`;
+  const setProductQuantity = `cart_productQuantity-${productData.Id}`;
+  const setProductRate = `cart_productRate-${productData.Id}`;
 
   const icon = "cartbtn";
 
@@ -84,12 +85,12 @@ const CartProduct = ({ productData, setTrackQuantity, setMsg }) => {
     }
 
     setLoadQuantity(newQty);
-    localStorage.setItem(setKey1, newQty);
+    updateLocalStg(setProductQuantity, newQty);
 
     const newPrice = newQty * originalPrice;
 
     setLoadProductRate(newPrice);
-    localStorage.setItem(setKey2, newPrice);
+    updateLocalStg(setProductRate, newPrice);
 
     const updatedTotal = total.map((item) =>
       item.Id === productData.Id
@@ -98,7 +99,7 @@ const CartProduct = ({ productData, setTrackQuantity, setMsg }) => {
     );
 
     setTotal(updatedTotal);
-    localStorage.setItem("cartTotal", JSON.stringify(updatedTotal));
+    updateLocalStg("cartTotal", updatedTotal);
   };
 
   const purchase = () => {
@@ -117,12 +118,12 @@ const CartProduct = ({ productData, setTrackQuantity, setMsg }) => {
         };
 
         setPurchaseData(cartProductData);
-        localStorage.setItem("purchaseData", JSON.stringify(cartProductData));
+        updateLocalStg("purchaseData", cartProductData);
 
         const tempStoreIds = [...orderIds, productData.Id];
 
         setOrderIds(tempStoreIds);
-        localStorage.setItem("orderId", JSON.stringify(tempStoreIds));
+        updateLocalStg("orderId", tempStoreIds);
 
         navigate("/purchase");
 
@@ -140,37 +141,38 @@ const CartProduct = ({ productData, setTrackQuantity, setMsg }) => {
     const countProduct = count - 1;
 
     setCount(countProduct);
-    localStorage.setItem("cartCount", countProduct);
+    updateLocalStg("cartCount", countProduct);
 
     const filteredProduct = cartProduct.filter(
       (product) => product.Id !== productId
     );
 
     setCartProduct(filteredProduct);
-    localStorage.setItem("cartProduct", JSON.stringify(filteredProduct));
+    updateLocalStg("cartProduct", filteredProduct);
 
     const removeProductId=addedProductIds.filter((id) => id !== productId);
 
     setAddedProductIds(removeProductId);
-    localStorage.setItem("productId",JSON.stringify(removeProductId));
+    updateLocalStg("productId", removeProductId);
 
     const updatedTotal = total.filter((product) => product.Id !== productId);
     
     setTotal(updatedTotal);
-    localStorage.setItem("cartTotal", JSON.stringify(updatedTotal));
+    updateLocalStg("cartTotal", updatedTotal);
 
-    localStorage.removeItem(`cart_productQuantity-${productId}`);
-    localStorage.removeItem(`cart_productRate-${productId}`);
+    updateLocalStg(setProductQuantity, null, false);
+
+    updateLocalStg(setProductRate, null, false);
   };
 
   // Sync quantity & price when product changes
   useEffect(() => {
     //when page re-loads getting data from local storage if not data in local storage load it with initial values
-    const reloadQuantity = localStorage.getItem(setKey1);
+    const reloadQuantity = localStorage.getItem(setProductQuantity);
     setLoadQuantity(reloadQuantity ? parseInt(reloadQuantity) : quantity);
 
     //when page re-loads getting data from local storage if not data in local storage load it with initial values
-    const reloadProductRate = localStorage.getItem(setKey2);
+    const reloadProductRate = localStorage.getItem(setProductRate);
     setLoadProductRate(
       reloadProductRate ? parseInt(reloadProductRate) : productRate
     );

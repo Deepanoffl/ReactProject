@@ -1,6 +1,7 @@
 import { ProductContext } from "./ManageProductData";
 import { useContext, useEffect, useState } from "react";
 import RatingStars from "./RatingStars";
+import { updateLocalStg } from "./HelperFn/updateLocalStorage";
 import { PackageCheck, Truck, ShoppingBag } from "lucide-react";
 
 const OrderDetails = ({ order }) => {
@@ -56,19 +57,19 @@ const OrderDetails = ({ order }) => {
   };
 
   const handleRemove = (Id) => {
+    updateLocalStg(loadKey, null, false);
+
     //removing product in myorders
     const removeOrder = myOrders.filter((order) => order.Id != Id);
 
-    localStorage.removeItem(loadKey);
-
     setMyOrders(removeOrder);
-    localStorage.setItem("orderedData", JSON.stringify(removeOrder));
+    updateLocalStg("orderedData", removeOrder);
 
     //removing product id in my my orders to enable purchase again
     const removeOrderId = orderIds.filter((orderId) => orderId != order.Id);
 
     setOrderIds(removeOrderId);
-    localStorage.setItem("orderId", JSON.stringify(removeOrderId));
+    updateLocalStg("orderId", removeOrderId);
   };
 
   useEffect(() => {

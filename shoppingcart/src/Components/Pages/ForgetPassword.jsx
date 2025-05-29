@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ProductContext } from "../ManageProductData";
 import { useState, useContext } from "react";
+import { updateLocalStg } from "../HelperFn/updateLocalStorage";
 import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 
 
@@ -105,7 +106,8 @@ const ForgetPassword = () => {
     });
 
     setUsers(updatedUsers);
-    localStorage.setItem("allUsers", JSON.stringify(updatedUsers));
+    // localStorage.setItem("allUsers", JSON.stringify(updatedUsers));
+    updateLocalStg("allUsers", updatedUsers);
 
     setErrMsg("Password Changed");
     setShowPassword(false);

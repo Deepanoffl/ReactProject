@@ -6,6 +6,7 @@ import OrderLimit from "./OrderLimit";
 import Spinner from "./Spinner";
 import { transformModal } from "./HelperFn/modalAnimation";
 import { hideOverflow } from "./HelperFn/hideOverflow";
+import { updateLocalStg } from "./HelperFn/updateLocalStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBolt } from "@fortawesome/free-solid-svg-icons";
 import { FaTimes } from "react-icons/fa";
@@ -46,10 +47,10 @@ const ExpandProduct = () => {
 
   const closeExpand = () => {
     setExpandData({});
-    localStorage.removeItem("expandData");
+    updateLocalStg("expandData", null, false);
 
     setExpand(false);
-    localStorage.removeItem("expand");
+    updateLocalStg("expand", null, false);
   };
 
   const purchase = () => {
@@ -64,14 +65,12 @@ const ExpandProduct = () => {
         };
 
         setPurchaseData(expandProductDetails);
-        localStorage.setItem(
-          "purchaseData",
-          JSON.stringify(expandProductDetails)
-        );
+        updateLocalStg("purchaseData", expandProductDetails);
 
         const tempStoreIds = [...orderIds, expandData.Id];
+        
         setOrderIds(tempStoreIds);
-        localStorage.setItem("orderId", JSON.stringify(tempStoreIds));
+        updateLocalStg("orderId", tempStoreIds);
 
         navigate("/purchase");
       } else {

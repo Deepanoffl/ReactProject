@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { ProductContext } from "../ManageProductData";
 import { useContext, useEffect, useState } from "react";
 import { transformModal } from "../HelperFn/modalAnimation";
+import { updateLocalStg } from "../HelperFn/updateLocalStorage";
 import { FaShoppingCart } from "react-icons/fa";
 
 const BuyNow = () => {
@@ -43,7 +44,7 @@ const BuyNow = () => {
     const storeUpdatedData = [...myOrders, updatedData];
 
     setMyOrders(storeUpdatedData);
-    localStorage.setItem("orderedData", JSON.stringify(storeUpdatedData));
+    updateLocalStg("orderedData", storeUpdatedData);
 
     navigate("/order");
   };
@@ -52,19 +53,19 @@ const BuyNow = () => {
     const removeOrderId = orderIds.filter((Id) => purchaseData.Id != Id);
 
     setOrderIds(removeOrderId);
-    localStorage.setItem("orderId", JSON.stringify(removeOrderId));
+    updateLocalStg("orderId", removeOrderId);
 
     setPurchaseData({});
-    localStorage.removeItem("purchaseData");
+    updateLocalStg("purchaseData", null, false);
 
     setExpandData({});
-    localStorage.removeItem("expandData");
+    updateLocalStg("expandData", null, false);
 
     setExpand(false);
-    localStorage.removeItem("expand");
+    updateLocalStg("expand", null, false);
 
     setIsCartOpen(false);
-    localStorage.removeItem("cartModal");
+    updateLocalStg("cartModal", null, false);
 
     window.history.back();
   };

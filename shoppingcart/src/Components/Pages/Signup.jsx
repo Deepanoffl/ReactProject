@@ -1,6 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
 import { ProductContext } from "../ManageProductData";
 import { useState, useContext } from "react";
+import { updateLocalStg } from "../HelperFn/updateLocalStorage";
 import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Signup = () => {
@@ -82,7 +83,8 @@ const Signup = () => {
       ];
 
       setUsers(loadUsers);
-      localStorage.setItem("allUsers", JSON.stringify(loadUsers));
+      // localStorage.setItem("allUsers", JSON.stringify(loadUsers));
+      updateLocalStg("allUsers", loadUsers);
 
       navigate("/");
     } else {

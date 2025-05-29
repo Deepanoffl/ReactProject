@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { ProductContext } from "./ManageProductData";
 import { useContext } from "react";
+import { updateLocalStg } from "./HelperFn/updateLocalStorage";
 
 const FavoriteItem = ({ productDetails }) => {
   //for page routing
@@ -15,7 +16,7 @@ const FavoriteItem = ({ productDetails }) => {
     const storeDetails = { ...productDetails };
 
     setExpandData(storeDetails);
-    localStorage.setItem("expandData", JSON.stringify(storeDetails));
+    updateLocalStg("expandData", storeDetails);
 
     setExpand(true);
     localStorage.setItem("expand", "open");
